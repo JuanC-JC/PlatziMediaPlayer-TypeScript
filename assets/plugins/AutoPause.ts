@@ -1,4 +1,11 @@
+import MediaPlayer from "../MediaPlayer";
+
 class AutoPause{
+
+    //puedo declarar variables como privadas -> declaro el tipo que contendra
+    //cada una de mis variables internas this
+    private threshold: number;
+    player: MediaPlayer;
 
     constructor(){
         this.threshold = 0.25
@@ -8,7 +15,31 @@ class AutoPause{
         this.handleVisibilityChange = this.handleVisibilityChange.bind(this)    
     }
 
-    run(player){
+    //funciones declaradas como privadas al igual que las variables
+    
+    // la funcion callback que ejecuta el observer me pasara unos parametros 
+    //indico que el tipo de entrada es de tipo intersectionObserverEntry[]
+    private handleIntersection(entries:IntersectionObserverEntry[]){
+        const entry = entries[0]
+
+
+        if (entry.intersectionRatio > 0.25){
+            this.player.play()
+        }else{
+            this.player.pause()
+        }
+    }
+
+    private handleVisibilityChange(){
+
+        const isVisible = document.visibilityState  === 'visible'
+
+
+        isVisible ? this.player.play() : this.player.pause()
+
+    }
+
+    run(player:MediaPlayer){
         this.player = player
         
         //recibe la funcion que debe ejecutar y el parametro de corte en pantalla, osea la funcion
@@ -27,25 +58,6 @@ class AutoPause{
         document.addEventListener('visibilitychange',this.handleVisibilityChange)
     }
 
-    // la funcion callback que ejecuta el observer me pasara unos parametros 
-    handleIntersection(entries){
-        const entry = entries[0]
-
-        if (entry.intersectionRatio > 0.25){
-            this.player.play()
-        }else{
-            this.player.pause()
-        }
-    }
-
-    handleVisibilityChange(){
-
-        const isVisible = document.visibilityState  === 'visible'
-
-
-        isVisible ? this.player.play() : this.player.pause()
-
-    }
 }
 
 
