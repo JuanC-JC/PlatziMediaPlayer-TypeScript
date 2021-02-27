@@ -34,7 +34,7 @@ class AdsPlugin{
     private handleTimeUpdate(){
         const currentTime = Math.floor(this.media.currentTime);
 
-        //cada 30 segundos renderiza un nuevo ad
+        //cada 30 segundos renderiza un nuevo ad --> esto se eejecuta durante ese segundo almenos 5 veces ....
         if(currentTime % 30 === 0 ){
             this.renderAd()
         }
@@ -43,8 +43,7 @@ class AdsPlugin{
 
     private renderAd(){
 
-        console.log(new Date());
-        //si existe un currentad no pedir otro
+        //si existe un currentad no pedir otro esto es por que la funcion se ejecuta 4 veces en el mismo segundo
         if(this.currentAd){
             return
         }
@@ -63,7 +62,7 @@ class AdsPlugin{
                                         </div>`
 
 
-        //cada 10 segs elimino el ad recurrente                      
+        //cada 10 segs elimino el ad                      
         setTimeout(() => {
             this.currentAd = null
             this.adsContainer.innerHTML = ''
