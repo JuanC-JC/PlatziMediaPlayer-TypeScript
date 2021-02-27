@@ -2,16 +2,30 @@
 class MediaPlayer {
 
     media: HTMLMediaElement //HTMLMediaElement <video>
-    playStateByUser: boolean
-    plugins: Array<any>
+    private playStateByUser: boolean
+    private plugins: Array<any>
+    container: HTMLDivElement
 
 
     constructor(config) {
         this.media = config.element                  
         this.plugins = config.plugins || []
         this.playStateByUser = true
+        this.initPlayer()
         this.initPlugins()        //when the mediaplayer is create the plugins start in automatic
 
+    }
+
+
+    initPlayer(){
+        this.container = document.createElement('div')
+        this.container.style.position = 'relative'
+
+        //insertar al lado del video
+        this.media.parentNode.insertBefore(this.container,this.media)
+
+        //luego movemos al video dentro del contenedor que acabamos de crear
+        this.container.appendChild(this.media)
     }
 
     play() {
