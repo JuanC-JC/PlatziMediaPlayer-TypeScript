@@ -98,9 +98,6 @@ let rect: Rectangulo = {
 }
 
 
-
 function calcArea(r:Rectangulo):number{
     return r.heigth * r.width
 }
-
-
