@@ -8,7 +8,7 @@ _proyecto desarrollado siguiendo como guia lineamientos presentados en el proyec
 * [3. Pre-requsitos 📋](#3-pre-requisitos)
 * [4. Deploy and Build](#4-deploy-or-production)
 * [5. Demo](#5-demo)
-* [6. autores ✒️](#6-autores-✒️)
+* [6. autores ✒️](#6-autores)
 
 
 ## 1. Resumen del proyecto
@@ -57,7 +57,7 @@ npm install
   ```
 
 
-# 5. Demo 
+# 5. Demo
 
 * deploy del proyecto [DEPLOY](https://platzi-mediaplayer.netlify.app/)
 
@@ -66,7 +66,7 @@ npm install
 
 
 
-# 6. Autores ✒️
+# 6. Autores
 
 _Proyecto desarrollado por:_
 
