@@ -1,6 +1,5 @@
 import MediaPlayer from "../MediaPlayer";
 
-//comments to test push
 class AutoPause{
 
     //puedo declarar variables como privadas -> declaro el tipo que contendra
