@@ -28,8 +28,12 @@ MediaPlayer.prototype.togglePlay = function(){
 MediaPlayer.prototype.toggleMute = function(){
     this.media.muted ? this.media.muted = false : this.media.muted = true
 }
+
 MediaPlayer.prototype._initPlugins = function(){
     this.plugins.forEach(plugin=>{
         plugin.run(this)
     })
 }
+
+
+//test comment
