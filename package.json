@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel index.html ejercicios/typescript/index.html"
+    "start": "parcel index.html"
   },
   "keywords": [],
   "author": "Juan Camilo - JC <juancchaparro97@gmail.com>",
